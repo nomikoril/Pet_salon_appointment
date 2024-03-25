@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Appointment Booking</h1>
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+            
+        {% from "_formhelpers.html" import render_field %}
+        
+            
+            <dl>
+                {{ render_field(form.pets) }}
+            </dl>
+                {{ form.date.label}}
+                {{ form.date(class="dtpick") }}
+                {% for error in form.date.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            <dl>
+                {{ render_field(form.time) }}
+                
+            </dl>
+                {{ form.service.label }}
+                {{ form.service()}}
+                {% for error in form.service.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                {{ form.groomer.label }}
+                {{ form.groomer()}}
+                {% for error in form.groomer.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                
+        
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

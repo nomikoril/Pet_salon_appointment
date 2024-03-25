@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}Pet register{% endblock %}
+
+{% block content %} 
+
+<form method="POST">
+    <h3 align="center">Register your pet</h3>
+    <div class="form-group">
+        <label for="name">Pet Name</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="name" 
+        name='name' 
+        placeholder="Enter your pet name"
+        />
+    </div>
+    <div class="form-group">
+        <label for="dateofbirth">Date of birth</label>
+        <input 
+        type="date" 
+        class="form-control" 
+        id="dateofbirth" 
+        name='dateofbirth' 
+        placeholder="Enter your pet birth day"
+        />
+    </div>
+    <div class="form-group">
+        <label for="type">Pet type</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="type" 
+        name='type' 
+        placeholder="Enter your pet type"
+        />
+    </div>
+    <div class="form-group">
+        <label for="breed">Breed</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="breed" 
+        name='breed' 
+        placeholder="Enter your pet breed"
+        />
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="gender" 
+        name='gender' 
+        placeholder="Enter pet gender"
+        />
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight</label>
+        <input 
+        type="number" 
+        class="form-control" 
+        id="weight" 
+        name='weight' 
+        placeholder="Enter pet weight"
+        />
+    </div>
+    
+<br />
+<button type="submit" class="btn btn-primary">Add pet</button>
+</form>
+
+{% endblock %}

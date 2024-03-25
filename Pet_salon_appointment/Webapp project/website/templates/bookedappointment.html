@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}Book{% endblock %}
+
+
+{% block content %} 
+
+<h3 align="center">Your appointments</h3>
+
+<table border="1" cellpadding=3 class="table table-striped">
+  <tr>
+      <th>Pet name</th>
+      <th>Pet breed</th>
+      <th>Service</th>
+      <th>Groomer</th>
+      <th>Date</th>
+      <th>Time</th>
+  </tr>
+{% for x in appointments %}
+  <tr>
+      <td>{{ x.pet_name }}</td>
+      <td>{{ x.breed }}</td>
+      <td>{{ x.service }}</td> 
+      <td>{{ x.groomer }}</td> 
+      <td>{{ x.date }}</td> 
+      <td>{{ x.time }}</td>  
+  </tr>
+{% endfor %}
+</table>
+
+
+
+{% endblock %}

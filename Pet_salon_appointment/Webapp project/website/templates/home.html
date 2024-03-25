@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+
+
+{% block content %} 
+<br>
+<div>
+<h2 align="left">NOMAYO</h2>
+<body>Welcome to the our grooming booking web page. You can register yourself and your pets and book an appointment with this website.</body>
+</div>
+<br>
+<br>
+<div>
+<h4 align="left">Your pets</h4>
+<body>Here is the list of your pets. You can add pet in the "Pet registration" section.</h6>
+<ul class="list-group list-group-flush" id="pets">
+  {% for pet in user.pets %}
+  <li class="list-group-item">
+    {{ pet.name }}
+    {{ pet.type }}
+    <button type="button" class="close" onClick="deletePet({{ pet.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+</div> 
+
+
+
+{% endblock %}

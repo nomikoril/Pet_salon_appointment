@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block title %}Dashboard{% endblock %}
+
+
+{% block content %} 
+<br>
+<body>
+<div>
+    <h6 align="center">Top 3 owners by number of appointments</h6>
+    <br>
+  <table border="1" size="2" cellpadding=3 class="table table-striped">
+    <tr>
+        <th>Owner name</th>
+        <th>Number of Appointment</th>
+        
+    </tr>
+  {% for x in top_appointment %}
+    <tr>
+        <td>{{ x.first_name }}</td>   
+        <td>{{ x.count }}</td>  
+                 
+    </tr>
+  {% endfor %}
+  </table>
+  <br>
+  <h6 align="center">Top 3 owners by number of pets</h6>
+  <br>
+  <table border="1" size="2" cellpadding=3 class="table table-striped">
+    <tr>
+        <th>Owner name</th>
+        <th>Number of pets</th>
+        
+    </tr>
+  {% for x in top_pets %}
+    <tr>
+        <td>{{ x.first_name }}</td>   
+        <td>{{ x.count }}</td>  
+                 
+    </tr>
+  {% endfor %}
+  </table>
+  <br>
+  <h6 align="center">Daily appointments</h6>
+  <br>
+  <table border="1" size="2" cellpadding=3 class="table table-striped">
+    <tr>
+        <th>Date</th>
+        <th>Appointments</th>
+        
+    </tr>
+  {% for x in daily %}
+    <tr>
+        <td>{{ x.date }}</td>   
+        <td>{{ x.count }}</td>  
+                 
+    </tr>
+  {% endfor %}
+  </table>
+  <br>
+  <h6 align="center">All pets</h6>
+  <br>
+  <table border="1" size="2" cellpadding=3 class="table table-striped">
+    <tr>
+        <th>Pet type</th>
+        <th>Count</th>
+        
+    </tr>
+  {% for x in pet_type %}
+    <tr>
+        <td>{{ x.type }}</td>   
+        <td>{{ x.count }}</td>  
+                 
+    </tr>
+  {% endfor %}
+  </table>
+</div>
+</body>
+  {% endblock %}

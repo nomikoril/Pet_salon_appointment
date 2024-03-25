@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+
+
+{% block content %} 
+<div>
+    <h3 align="center">Service fees</h3>
+  
+  <table border="1" cellpadding=3 class="table table-striped">
+    <tr>
+        <th>id</th>
+        <th>Service</th>
+        <th>Fee</th>
+    </tr>
+  {% for x in services %}
+    <tr>
+        <td>{{ x.id }}</td>   
+        <td>{{ x.service }}</td>  
+        <td>{{ x.price }}</td> 
+         
+    </tr>
+  {% endfor %}
+  </table>
+</div>
+
+  {% endblock %}
